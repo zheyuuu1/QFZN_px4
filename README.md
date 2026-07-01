@@ -18,6 +18,7 @@ Open the latest GitHub Release and download all files named like:
 PX4-Autopilot-full-20260701-140420.tar.gz.part-000
 PX4-Autopilot-full-20260701-140420.tar.gz.part-001
 ...
+PX4-Autopilot-full-20260701-140420.tar.gz.sha256
 PX4-Autopilot-full-20260701-140420.release-manifest.txt
 ```
 
