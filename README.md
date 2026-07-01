@@ -156,7 +156,38 @@ for file in \
 
 下载完成后，继续执行前面的合并、校验、解压命令即可。
 
-## 六、常见问题
+## 六、编译验证
+
+这份 Release 里的分卷压缩包已经做过一次实际编译验证。验证方式是：重新合并 Release 中的 `.part-*` 文件，校验 SHA256，通过后解压到临时目录，然后删除已有的 `build/cuav_x7pro_default`，重新执行：
+
+```bash
+make cuav_x7pro_default
+```
+
+验证环境：
+
+```text
+WSL Ubuntu-22.04
+目标：cuav_x7pro_default
+源码 HEAD：fbaf902bbb
+验证时间：2026-07-01
+```
+
+验证结果：编译通过，并生成：
+
+```text
+build/cuav_x7pro_default/cuav_x7pro_default.px4
+```
+
+编译日志中的关键结果：
+
+```text
+[100%] Built target px4_package
+BUILD_EXIT 0
+```
+
+注意：本次编译的 FLASH 使用率为 `96.45%`，已经比较接近上限，但当前代码能够完成链接和打包。
+## 七、常见问题
 
 ### 只下载了一个 `part-000` 可以解压吗？
 
